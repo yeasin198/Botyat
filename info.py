@@ -65,3 +65,14 @@ def main():
 
 if __name__ == '__main__':
     main()
+heroku logs --tail
+git push heroku master
+git add requirements.txt Procfile
+git commit -m "Add requirements and Procfile"
+worker: python telegram_bot.py
+heroku buildpacks:set heroku/python
+python-telegram-bot
+requests
+
+
+
